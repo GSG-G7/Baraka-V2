@@ -1,6 +1,6 @@
 const tape = require('tape');
-const { dbBuild } = require('./../src/models/config/build');
-const { items, lists, users } = require('../src/models/queries');
+// const { dbBuild } = require('./../src/models/config/build');
+// const { items, lists, users } = require('../src/models/queries');
 
 tape('init tape test', t => {
   t.equal(1, 1, 'should pass');
