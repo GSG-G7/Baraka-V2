@@ -12,7 +12,6 @@ CREATE TABLE baraka_user (
 );
 CREATE TABLE baraka_item (
     id SERIAL PRIMARY KEY,
-    name VARCHAR(30),
     content VARCHAR,
     list_id INTEGER REFERENCES baraka_list(id),
     user_id INTEGER REFERENCES baraka_user(id)
