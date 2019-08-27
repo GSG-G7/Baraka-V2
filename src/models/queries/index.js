@@ -1,9 +1,9 @@
-const items = require('./items');
-const lists = require('./lists');
-const users = require('./users');
+const item = require('./item');
+const list = require('./list');
+const user = require('./user');
 
 module.exports = {
-  items,
-  lists,
-  users
+  item,
+  list,
+  user
 };
