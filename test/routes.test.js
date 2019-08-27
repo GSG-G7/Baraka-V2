@@ -1,11 +1,11 @@
-// const tape = require('tape');
+const tape = require('tape');
 // const supertest = require('supertest');
 // const app = require('../src/app');
 
-// tape('init routes test', t => {
-//   t.equal(1, 1, 'should pass');
-//   t.end();
-// });
+tape('init routes test', t => {
+  t.equal(1, 1, 'should pass');
+  t.end();
+});
 
 // tape('test success for / endpoint', t => {
 //   supertest(app)
