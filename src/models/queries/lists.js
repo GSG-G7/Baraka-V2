@@ -11,7 +11,7 @@ const insert = listData => {
 
 const selectAll = () => {
   const sql = `SELECT * FROM baraka_list;`;
-  return connection(sql);
+  return connection.query(sql);
 };
 
 module.exports = { insert, selectAll };

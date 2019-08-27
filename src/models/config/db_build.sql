@@ -13,7 +13,7 @@ CREATE TABLE baraka_user (
 CREATE TABLE baraka_item (
     id SERIAL PRIMARY KEY,
     content VARCHAR,
-    isDone BOOLEAN,
+    is_done BOOLEAN,
     list_id INTEGER REFERENCES baraka_list(id),
     user_id INTEGER REFERENCES baraka_user(id)
 );
