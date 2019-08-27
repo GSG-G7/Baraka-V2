@@ -13,4 +13,4 @@ const signupSchema = Joi.object().keys({
   email: Joi.string().email({ minDomainSegments: 2 })
 });
 
-module.exports = loginData => Joi.validate(loginData, signupSchema);
+module.exports = { signupValidate: loginData => Joi.validate(loginData, signupSchema) };

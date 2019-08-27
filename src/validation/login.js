@@ -11,4 +11,4 @@ const loginSchema = Joi.object().keys({
     .required()
 });
 
-module.exports = loginData => Joi.validate(loginData, loginSchema);
+module.exports = { loginValidate: loginData => Joi.validate(loginData, loginSchema) };
