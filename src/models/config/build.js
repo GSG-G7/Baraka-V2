@@ -4,11 +4,12 @@ const { readFileSync } = require('fs');
 const connection = require('./connection');
 
 const dbBuild = () => {
-  let sql = '';
-  if (process.env.NODE_ENV === 'test')
-    sql = readFileSync(join(__dirname, 'test_db_build.sql')).toString();
-  else sql = readFileSync(join(__dirname, 'db_build.sql')).toString();
-  return connection.query(sql);
-};
+  const sql = readFileSync(join(__dirname, 'db_build.sql')).toString();
+  const insert = readFileSync(join(__dirname, 'insert_fake_data.sql')).toString();
 
+  return connection.query(sql).then(result => {
+    if (process.env.NODE_ENV === 'test') return connection.query(insert);
+    return result;
+  });
+};
 module.exports = { dbBuild };
