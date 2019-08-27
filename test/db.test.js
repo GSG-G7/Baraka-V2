@@ -1,11 +1,11 @@
-// const tape = require('tape');
-// const { dbBuild } = require('./../src/models/config/build');
-// const { items, lists, users } = require('../src/models/queries');
+const tape = require('tape');
+const { dbBuild } = require('./../src/models/config/build');
+const { items, lists, users } = require('../src/models/queries');
 
-// tape('init tape test', t => {
-//   t.equal(1, 1, 'should pass');
-//   t.end();
-// });
+tape('init tape test', t => {
+  t.equal(1, 1, 'should pass');
+  t.end();
+});
 
 // tape('test selectAll from users table', t => {
 //   const expected = [
