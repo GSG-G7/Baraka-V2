@@ -1,7 +1,6 @@
 const { compare } = require('bcrypt');
 const { sign } = require('jsonwebtoken');
 const { find } = require('../models/queries/user');
-require('env2')('config.env');
 
 const get = (req, res, next) => {
   res.render('login');

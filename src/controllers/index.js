@@ -5,7 +5,7 @@ const login = require('./login');
 const signup = require('./signup');
 
 const { client, server } = require('./error');
-// const { addList, addItem } = require('./postData');
+const { addList, addItem } = require('./postData');
 
 router.get('/', home);
 
@@ -15,8 +15,8 @@ router.get('/signup', signup.get);
 router.post('/login', login.post);
 router.post('/signup', signup.post);
 
-// router.post('/addList', addList);
-// router.post('/addItem', addItem);
+router.post('/addList', addList);
+router.post('/addItem', addItem);
 
 router.all('*', client);
 router.use(server);
