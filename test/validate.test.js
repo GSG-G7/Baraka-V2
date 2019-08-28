@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 const tape = require('tape');
 const { signupValidate, loginValidate } = require('../src/validation/index');
 
@@ -10,66 +9,72 @@ tape('init tape test', t => {
 tape('Test loginValidate function', t => {
   t.plan(5);
 
-  t.test('test for success case', t => {
+  t.test('test for success case', st => {
     const testSchema = {
       username: 'Mohammed',
       password: '123456789'
     };
     loginValidate(testSchema)
       .then(res => {
-        t.deepEqual(testSchema, res, 'should be the same');
-        t.end();
+        st.deepEqual(testSchema, res, 'should be the same');
+        st.end();
       })
-      .catch(t.error);
+      .catch(st.error);
   });
 
-  t.test('test for wrong username input, lower than 2 character', t => {
+  t.test('test for wrong username input, lower than 2 character', st => {
     const testSchema = {
       username: 'M',
       password: '12444444444'
     };
     loginValidate(testSchema).catch(err => {
-      t.true(
+      st.true(
         err.message,
         'child "username" fails because ["username" length must be at least 2 characters long]'
       );
-      t.end();
+      st.end();
     });
   });
 
-  t.test('test for wrong passwoed input, lower than 8 character', t => {
+  t.test('test for wrong passwoed input, lower than 8 character', st => {
     const testSchema = {
       username: 'Mohammed',
       password: '12'
     };
     loginValidate(testSchema).catch(err => {
-      t.true(
+      st.true(
         err.message,
         'child "password" fails because ["password" with value "12" fails to match the required pattern: /^[a-zA-Z0-9]{8,30}$/]]'
       );
-      t.end();
+      st.end();
     });
   });
 
-  t.test('check for required username', t => {
+  t.test('check for required username', st => {
     const testSchema = {
       username: '',
       password: '12'
     };
     loginValidate(testSchema).catch(err => {
-      t.true(err.message, 'child "username" fails because ["username" is not allowed to be empty]');
-      t.end();
+      st.true(
+        err.message,
+        'child "username" fails because ["username" is not allowed to be empty]'
+      );
+      st.end();
     });
   });
 
-  t.test('check for required passwo', t => {
+  t.test('check for required passwo', st => {
     const testSchema = {
-      username: '',
-      password: '12'
+      username: 'Mohameed',
+      password: ''
     };
     loginValidate(testSchema).catch(err => {
-      t.true(err.message, 'child "username" fails because ["username" is not allowed to be empty]');
-      t.end();
+      st.true(
+        err.message,
+        'child "username" fails because ["password" is not allowed to be empty]'
+      );
+      st.end();
     });
   });
 });
@@ -77,7 +82,7 @@ tape('Test loginValidate function', t => {
 tape('Test signupValidate function', t => {
   t.plan(5);
 
-  t.test('test for success case', t => {
+  t.test('test for success case', st => {
     const testSchema = {
       username: 'Mohammed',
       password: '123456789',
@@ -86,13 +91,13 @@ tape('Test signupValidate function', t => {
     };
     signupValidate(testSchema)
       .then(res => {
-        t.deepEqual(testSchema, res, 'should be the same');
-        t.end();
+        st.deepEqual(testSchema, res, 'should be the same');
+        st.end();
       })
-      .catch(t.error);
+      .catch(st.error);
   });
 
-  t.test('test for wrong username input, lower than 2 character', t => {
+  t.test('test for wrong username input, lower than 2 character', st => {
     const testSchema = {
       username: 'M',
       password: '12444444444',
@@ -100,14 +105,14 @@ tape('Test signupValidate function', t => {
       email: 'mhmmade@gmail.com'
     };
     signupValidate(testSchema).catch(err => {
-      t.true(
+      st.true(
         err.message,
         'child "username" fails because ["username" length must be at least 2 characters long]'
       );
-      t.end();
+      st.end();
     });
   });
-  t.test('test for wrong password enter', t => {
+  t.test('test for wrong password enter', st => {
     const testSchema = {
       username: 'Mohammed',
       password: '12',
@@ -115,15 +120,15 @@ tape('Test signupValidate function', t => {
       email: 'mhmmade@gmail.com'
     };
     signupValidate(testSchema).catch(err => {
-      t.true(
+      st.true(
         err.message,
         'child "password" fails because ["password" with value "12" fails to match the required pattern: /^[a-zA-Z0-9]{8,30}$/]]'
       );
-      t.end();
+      st.end();
     });
   });
 
-  t.test('test for non-matching wrong password', t => {
+  t.test('test for non-matching wrong password', st => {
     const testSchema = {
       username: 'Mohammed',
       password: '123456789',
@@ -131,15 +136,15 @@ tape('Test signupValidate function', t => {
       email: 'mhmmade@gmail.com'
     };
     signupValidate(testSchema).catch(err => {
-      t.true(
+      st.true(
         err.message,
         'child "confirmPassword" fails because ["confirmPassword" must be one of [ref:password]]'
       );
-      t.end();
+      st.end();
     });
   });
 
-  t.test('test for writing the minimum number of email segments', t => {
+  t.test('test for writing the minimum number of email segments', st => {
     const testSchema = {
       username: 'Mohammed',
       password: '123456789',
@@ -147,8 +152,8 @@ tape('Test signupValidate function', t => {
       email: 'mhmmade@.com'
     };
     signupValidate(testSchema).catch(err => {
-      t.true(err.message, 'child "email" fails because ["email" must be a valid email]');
-      t.end();
+      st.true(err.message, 'child "email" fails because ["email" must be a valid email]');
+      st.end();
     });
   });
 });
