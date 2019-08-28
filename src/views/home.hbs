@@ -9,29 +9,23 @@
     <div class="home__results">
         {{#each result}}
         <div class="home__list">
-            <h1 class="list__title">{{this.listname}}</h1>
-            
+            <h1 class="list__title">{{this.name}}</h1>
             <form class="list__form" action="/addItem" method="POST">
-                <input type="number" name="list_id" value="{{this.list_id}}" hidden>
-                <input id='addItemName' class="item__name" type="text" value="" aria-label="input" name="item_name"
-                placeholder="Add new item" required>
-                <input id='addItemContent' class="item__content" type="text" value="" aria-label="input" name="item_content"
-                placeholder="Add descripition" required>
-                <input id='addItemUser' class="item__user" type="text" value="" aria-label="input" name="item_user"
-                    placeholder="Add user name" required>
+                <input type="number" name="list_id" value="{{this.id}}" hidden>
+                <input id='addItemContent' class="item__content" type="text" value="" aria-label="input"
+                    name="item_content" placeholder="Add descripition" required>
                 <input id='submit' class="item__add" type="submit" value="Add Item" aria-label="Add Item">
             </form>
-            
-            {{#each this.list}}
-                <div class="list__item">
-                    <h2 class="item__title">{{this.title}}</h2>
-                    <p class="item__pcontent">{{this.content}}</p>
-                    <p class="item__username">{{this.username}}</p>
-                </div>
+
+            {{#each this.item}}
+            <div class="list__item">
+                <p class="item__pcontent">{{this.content}}</p>
+                <p class="item__username">{{this.username}}</p>
+            </div>
             {{/each}}
-            
+
         </div>
         {{/each}}
     </div>
-    {{> footer}}   
+    {{> footer}}
 </section>
