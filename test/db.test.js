@@ -9,10 +9,10 @@ tape('init tape test', t => {
 
 tape('test selectAll from user table', t => {
   const expected = [
-    { id: 1, username: 'Mohammed', password: 'password1', email: 'codecademy@gmail.com' },
-    { id: 2, username: 'Fadi', password: '1', email: 'fadi@gmail.com' },
-    { id: 3, username: 'Mai', password: '1', email: 'mai@gmail.com' },
-    { id: 4, username: 'Amooda', password: '1', email: 'amooda@gmail.com' }
+    { id: 1, username: 'mohammed', password: 'password1', email: 'codecademy@gmail.com' },
+    { id: 2, username: 'fadi', password: '1', email: 'fadi@gmail.com' },
+    { id: 3, username: 'mai', password: '1', email: 'mai@gmail.com' },
+    { id: 4, username: 'amooda', password: '1', email: 'amooda@gmail.com' }
   ];
   dbBuild()
     .then(() => user.selectAll())
@@ -25,7 +25,7 @@ tape('test selectAll from user table', t => {
         ' the keys of first user object should return id and name'
       );
       t.equal(res[0].id, 1, 'the first id in the user is 1');
-      t.equal(res[1].username, 'Fadi', 'the last name in the user is Fadi');
+      t.equal(res[1].username, 'fadi', 'the last name in the user is Fadi');
     })
     .then(t.end)
     .catch(t.error);
@@ -79,10 +79,10 @@ tape('test selectAll from item table', t => {
 
 tape('test insert data to user table', t => {
   const expected = [
-    { id: 1, username: 'Mohammed', password: 'password1', email: 'codecademy@gmail.com' },
-    { id: 2, username: 'Fadi', password: '1', email: 'fadi@gmail.com' },
-    { id: 3, username: 'Mai', password: '1', email: 'mai@gmail.com' },
-    { id: 4, username: 'Amooda', password: '1', email: 'amooda@gmail.com' },
+    { id: 1, username: 'mohammed', password: 'password1', email: 'codecademy@gmail.com' },
+    { id: 2, username: 'fadi', password: '1', email: 'fadi@gmail.com' },
+    { id: 3, username: 'mai', password: '1', email: 'mai@gmail.com' },
+    { id: 4, username: 'amooda', password: '1', email: 'amooda@gmail.com' },
     { id: 5, username: 'kalb', password: '1', email: 'kalb@gmail.com' }
   ];
 
@@ -98,7 +98,7 @@ tape('test insert data to user table', t => {
         ' the keys of first user object should return id and name'
       );
       t.equal(res[0].id, 1, 'the first id in the user is 1');
-      t.equal(res[1].username, 'Fadi', 'the last name in the user is Fadi');
+      t.equal(res[1].username, 'fadi', 'the last name in the user is Fadi');
     })
     .then(t.end)
     .catch(t.error);
