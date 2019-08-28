@@ -1,10 +1,10 @@
 const router = require('express').Router();
 
 const { client, server } = require('./error');
-const { get } = require('./home');
+const home = require('./home');
 // const { addList, addItem } = require('./postData');
 
-router.get('/', get);
+router.get('/', home);
 // router.post('/addList', addList);
 // router.post('/addItem', addItem);
 
