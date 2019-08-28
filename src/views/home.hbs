@@ -23,7 +23,11 @@
                 <p class="item__username">{{this.username}}</p>
                 <form action="/markAsDone" method="POST">
                     <input type="text" class="itemId" value="{{this.id}}" hidden>
+                    {{#if this.isdone}}
+                    <button type="submit" class="fa fa-check item__mark done" aria-label="mark" value=""></button>
+                    {{else}}
                     <button type="submit" class="fa fa-check item__mark" aria-label="mark" value=""></button>
+                    {{/if}}
                 </form>  
             </div>
             {{/each}}

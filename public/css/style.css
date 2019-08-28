@@ -8,7 +8,7 @@
 
 body {
   background-color: #000;
-  background-image: linear-gradient(#1e2731,  rgba(0, 0, 0, 0.5) ), url('../assets/banner.jpg');
+  background-image: linear-gradient(#1e2731, rgba(0, 0, 0, 0.5)), url('../assets/banner.jpg');
   background-size: cover;
   background-position: top center;
 }
@@ -18,7 +18,7 @@ body {
   font-size: 2rem;
   padding: 2rem;
   text-align: center;
-  color: #CD5A91;
+  color: #cd5a91;
 }
 
 .home__form {
@@ -40,7 +40,7 @@ body {
   font-size: 18px;
   opacity: 0.5;
   letter-spacing: 2px;
-  color:#CD5A91;
+  color: #cd5a91;
 }
 
 .home__main__add {
@@ -54,7 +54,7 @@ body {
   text-decoration: none;
   font-weight: 700;
   text-transform: capitalize;
-  background: #CD5A91;
+  background: #cd5a91;
 }
 
 .home__results {
@@ -72,7 +72,7 @@ body {
   border-radius: 10px;
 }
 .list__title {
-  background: #CD5A91;
+  background: #cd5a91;
   text-align: center;
   color: #ffffff;
   font-family: sans-serif;
@@ -98,28 +98,28 @@ body {
   text-align: center;
   text-transform: capitalize;
 }
-.item__add{
+.item__add {
   cursor: pointer;
-  background: #AE4D7B;
+  background: #ae4d7b;
   color: #ffffff;
 }
 .list__item {
   display: block;
   border-top: 1px solid #2f2e2e;
-  border-radius: 5px; 
-  background: #DFE1E6;
+  border-radius: 5px;
+  background: #dfe1e6;
   color: #000000;
   margin: 5px;
   padding: 6px 8px 2px;
   opacity: 0.7;
 }
-.item__pcontent{
+.item__pcontent {
   text-align: left;
   padding: 3px;
 }
-.item__username{
+.item__username {
   font-weight: bold;
-  color: #AE4D7B;
+  color: #ae4d7b;
   text-align: right;
 }
 .footer {
@@ -151,6 +151,9 @@ body {
   text-transform: capitalize;
 }
 
+.done {
+  background: green;
+}
 @media (max-width: 600px) {
   .home__form {
     margin: 1rem 0.4rem;
