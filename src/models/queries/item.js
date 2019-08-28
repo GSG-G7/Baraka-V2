@@ -10,7 +10,7 @@ const insert = itemData => {
 };
 
 const selectAll = () => {
-  const sql = `SELECT id,content, is_done AS isDone FROM baraka_item;`;
+  const sql = `SELECT * FROM baraka_item;`;
   return connection.query(sql);
 };
 
