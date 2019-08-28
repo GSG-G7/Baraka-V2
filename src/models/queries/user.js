@@ -16,7 +16,7 @@ const selectAll = () => {
 
 const find = username => {
   const sql = {
-    text: 'SELECT username FROM baraka_user WHERE baraka_user.username LIKE $1;',
+    text: 'SELECT * FROM baraka_user WHERE baraka_user.username LIKE $1;',
     values: [username]
   };
   return connection.query(sql);
