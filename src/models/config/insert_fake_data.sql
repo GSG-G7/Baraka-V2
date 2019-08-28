@@ -1,10 +1,10 @@
 INSERT INTO baraka_user
     (username , password , email)
 VALUES
-    ('Mohammed' , 'password1' , 'codecademy@gmail.com'),
-    ('Fadi' , '1' , 'fadi@gmail.com'),
-    ('Mai' , '1' , 'mai@gmail.com'),
-    ('Amooda' , '1' , 'amooda@gmail.com');
+    ('mohammed' , 'password1' , 'codecademy@gmail.com'),
+    ('fadi' , '1' , 'fadi@gmail.com'),
+    ('mai' , '1' , 'mai@gmail.com'),
+    ('amooda' , '1' , 'amooda@gmail.com');
     
 INSERT INTO baraka_list
     (name)

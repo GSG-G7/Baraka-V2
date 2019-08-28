@@ -11,7 +11,7 @@ const post = (req, res, next) => {
     .catch(e => res.send(errmsg(e.details[0].type)))
     // make sure username is unique errmsg
     .then(() => hash(password, 10))
-    .then(hashed => insert({ email, username, password: hashed }));
+    .then(hashed => insert({ email, username: username.toLowerCase(), password: hashed }));
   // .then(() => res.redirect('/login'))
   // .catch(next);
 };
