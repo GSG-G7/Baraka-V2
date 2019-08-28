@@ -2,6 +2,7 @@ const router = require('express').Router();
 
 const home = require('./home');
 const login = require('./login');
+const logout = require('./logout');
 const signup = require('./signup');
 const { client, server } = require('./error');
 const { addList, addItem, markAsDone } = require('./postData');
@@ -9,6 +10,7 @@ const { addList, addItem, markAsDone } = require('./postData');
 router.get('/', home);
 
 router.get('/login', login.get);
+router.get('/logout', logout);
 router.get('/signup', signup.get);
 
 router.post('/login', login.post);
