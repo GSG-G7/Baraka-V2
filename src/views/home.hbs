@@ -12,8 +12,8 @@
             <h1 class="list__title">{{this.name}}</h1>
             <form class="list__form" action="/addItem" method="POST">
                 <input type="number" name="listId" value="{{this.id}}" hidden>
-                <input id='addItemContent' class="item__content" type="text" value="" aria-label="input"
-                    name="content" placeholder="Add descripition" required>
+                <input id='addItemContent' class="item__content" type="text" value="" aria-label="input" name="content"
+                    placeholder="Add descripition" required>
                 <input id='submit' class="item__add" type="submit" value="Add Item" aria-label="Add Item">
             </form>
 
@@ -22,9 +22,9 @@
                 <p class="item__pcontent">{{this.content}}</p>
                 <p class="item__username">{{this.username}}</p>
                 <form action="/markAsDone" method="POST">
-                    <input type="text" class="itemId" value="{{this.id}}" hidden>
-                    <button type="submit" class="fa fa-check item__mark" aria-label="mark" value=""></button>
-                </form>  
+                    <input type="number" name="id" value="{{this.id}}" hidden>
+                    <button class="fa fa-check item__mark" type="submit" aria-label="Add Item"></button>
+                </form>
             </div>
             {{/each}}
 

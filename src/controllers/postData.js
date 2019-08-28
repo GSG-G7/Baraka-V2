@@ -29,3 +29,7 @@ exports.addItem = (req, res, next) => {
     }
   }
 };
+exports.markAsDone = (req, res, next) => {
+  const { id } = req.body;
+  item.markAsDone(id).then(() => res.redirect('/'));
+};
