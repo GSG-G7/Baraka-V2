@@ -14,4 +14,10 @@ const selectAll = () => {
   return connection.query(sql);
 };
 
-module.exports = { insert, selectAll };
+// required for formatting data
+const getItemsWithUsernames = () => {
+  const sql = `SELECT baraka_item.id, content, is_done, list_id, baraka_user.username from baraka_item inner join baraka_user ON baraka_user
+  .id = baraka_item.user_id;`;
+  return connection.query(sql);
+};
+module.exports = { insert, selectAll, getItemsWithUsernames };
