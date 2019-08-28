@@ -10,7 +10,9 @@ const signupSchema = Joi.object().keys({
     .regex(/^[a-zA-Z0-9]{8,30}$/)
     .required(),
   confirmPassword: Joi.ref('password'),
-  email: Joi.string().email({ minDomainSegments: 2 })
+  email: Joi.string()
+    .email({ minDomainSegments: 2 })
+    .required()
 });
 
 module.exports = { signupValidate: loginData => Joi.validate(loginData, signupSchema) };
