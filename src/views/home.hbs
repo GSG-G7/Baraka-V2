@@ -1,7 +1,7 @@
 <section>
     {{> header}}
     <form class="home__form" action="/addList" method="POST">
-        <input id='addlist' class="home__main__input" type="text" value="" aria-label="input" name="list"
+        <input id='addlist' class="home__main__input" type="text" value="" aria-label="input" name="listName"
             placeholder="Add new list" required>
         <input id='submit' class="home__main__add" type="submit" value="Add List" aria-label="Add List">
     </form>
@@ -11,9 +11,9 @@
         <div class="home__list">
             <h1 class="list__title">{{this.name}}</h1>
             <form class="list__form" action="/addItem" method="POST">
-                <input type="number" name="list_id" value="{{this.id}}" hidden>
+                <input type="number" name="listId" value="{{this.id}}" hidden>
                 <input id='addItemContent' class="item__content" type="text" value="" aria-label="input"
-                    name="item_content" placeholder="Add descripition" required>
+                    name="itemContent" placeholder="Add descripition" required>
                 <input id='submit' class="item__add" type="submit" value="Add Item" aria-label="Add Item">
             </form>
 

@@ -9,6 +9,8 @@ exports.addList = (req, res, next) => {
 };
 
 exports.addItem = (req, res, next) => {
+  const { token } = req.cookies.body;
+  console.log(token);
   // adduser(req.body.item_user)
   //   .then(id => {
   //     const itemInfo = {
