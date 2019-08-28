@@ -75,7 +75,7 @@ tape('Test loginValidate function', t => {
 });
 
 tape('Test signupValidate function', t => {
-  t.plan(4);
+  t.plan(5);
 
   t.test('test for success case', t => {
     const testSchema = {
@@ -103,6 +103,21 @@ tape('Test signupValidate function', t => {
       t.true(
         err.message,
         'child "username" fails because ["username" length must be at least 2 characters long]'
+      );
+      t.end();
+    });
+  });
+  t.test('test for wrong password enter', t => {
+    const testSchema = {
+      username: 'Mohammed',
+      password: '12',
+      confirmPassword: '12',
+      email: 'mhmmade@gmail.com'
+    };
+    signupValidate(testSchema).catch(err => {
+      t.true(
+        err.message,
+        'child "password" fails because ["password" with value "12" fails to match the required pattern: /^[a-zA-Z0-9]{8,30}$/]]'
       );
       t.end();
     });
