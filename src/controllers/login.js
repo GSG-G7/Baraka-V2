@@ -1,5 +1,5 @@
 const { compare } = require('bcrypt');
-const { sign, verify } = require('jsonwebtoken');
+const { sign } = require('jsonwebtoken');
 const { find } = require('../models/queries/user');
 require('env2')('config.env');
 
@@ -18,7 +18,7 @@ const post = (req, res, next) => {
     .then(result => {
       if (result) {
         const token = sign({ userId: id, username }, key);
-        res.cookie('token', token, { maxAge: 300000 });
+        res.cookie('token', token, { maxAge: 86400000 });
         res.redirect('/');
       } else {
         throw Error('not logged');
