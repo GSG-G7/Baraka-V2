@@ -7,6 +7,7 @@ const get = (req, res, next) => {
 };
 const post = (req, res, next) => {
   const { email, username, password, confirmPassword } = req.body;
+  console.log(req.body);
   signupValidate({ email, username, password, confirmPassword })
     // make sure username is unique errmsg
     .then(() => user.find(username))
