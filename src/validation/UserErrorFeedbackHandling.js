@@ -1,9 +1,10 @@
 const feedBack = {
-  'string.min': 'user name must be at least 2 characters long',
-  'string.regex.base': 'password must be at least 8 characters long',
+  'string.min': 'Username must be at least 2 characters long',
+  'string.regex.base': 'Password must be at least 8 characters long',
   'any.empty': 'All fields are required',
-  'any.allowOnly': 'check your password confirmation',
-  'string.email': 'not valid email'
+  'any.allowOnly': 'Check your password confirmation',
+  'string.email': 'Not valid email',
+  'username exists': 'Username is taken'
 };
 
 module.exports = errmsg => feedBack[errmsg];
