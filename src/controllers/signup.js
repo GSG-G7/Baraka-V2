@@ -8,11 +8,13 @@ const get = (req, res, next) => {
 const post = (req, res, next) => {
   const { email, username, password, confirmPassword } = req.body;
   signupValidate({ email, username, password, confirmPassword })
-    .catch(e => res.send(errmsg(e.details[0].type)))
+    .then(userInfo => hash(userInfo.password, 10))
     // make sure username is unique errmsg
-    .then(() => hash(password, 10))
-    .then(hashed => insert({ email, username, password: hashed }));
-  // .then(() => res.redirect('/login'))
-  // .catch(next);
+    .then(hashed => insert({ email, username, password: hashed }))
+    .then(() => res.redirect('/login'))
+    .catch(err => {
+      if (err.isJoi) res.send(errmsg(err.details[0].type));
+      else next(err);
+    });
 };
 module.exports = { get, post };
