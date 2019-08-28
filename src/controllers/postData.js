@@ -1,28 +1,31 @@
-const { lists, items, users } = require('../models/queries/index');
+const { verify } = require('jsonwebtoken');
+const { list, item } = require('../models/queries/index');
 
 exports.addList = (req, res, next) => {
-  const listInfo = req.body;
-  lists
-    .insert(listInfo.list)
+  const { listName } = req.body;
+  list
+    .insert({ name: listName })
     .then(() => res.redirect('/'))
     .catch(next);
 };
 
 exports.addItem = (req, res, next) => {
-  const { token } = req.cookies.body;
-  console.log(token);
-  // adduser(req.body.item_user)
-  //   .then(id => {
-  //     const itemInfo = {
-  //       list_id: +req.body.list_id,
-  //       name: req.body.item_name,
-  //       content: req.body.item_content,
-  //       user_id: id
-  //     };
-  //     items
-  //       .insert(itemInfo)
-  //       .then(() => res.redirect('/'))
-  //       .catch(next);
-  //   })
-  //   .catch(next);
+  const { listId, content } = req.body;
+  const { token } = req.cookies;
+  const key = process.env.KEY;
+  if (!token) {
+    res.redirect('/login');
+  } else {
+    try {
+      const decoded = verify(token, key);
+      const { userId } = decoded;
+      const itemInfo = { content, isDone: false, listId, userId };
+      item
+        .insert(itemInfo)
+        .then(() => res.redirect('/'))
+        .catch(next);
+    } catch (err) {
+      console.log(err.message);
+    }
+  }
 };
