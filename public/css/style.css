@@ -151,8 +151,9 @@ body {
   text-transform: capitalize;
 }
 
-.done {
+.item__mark .done {
   background: green;
+  font-size: 100px;
 }
 @media (max-width: 600px) {
   .home__form {

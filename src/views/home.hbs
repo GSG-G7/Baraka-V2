@@ -21,7 +21,14 @@
             <div class="list__item">
                 <p class="item__pcontent">{{this.content}}</p>
                 <p class="item__username">{{this.username}}</p>
-                
+                <form action="/markAsDone" method="POST">
+                    <input type="number" name="id" value="{{this.id}}" hidden>
+                    {{#if this.is_done}}
+                    <button class="done" type="submit" aria-label="Add Item" hidden></button>
+                    {{else}}
+                    <button class="fa fa-check item__mark" type="submit" aria-label="Add Item"></button>
+                    {{/if}}
+                </form>
             </div>
             {{/each}}
         </div>
