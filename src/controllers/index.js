@@ -1,10 +1,20 @@
 const router = require('express').Router();
 
-const { client, server } = require('./error');
 const home = require('./home');
+const login = require('./login');
+const signup = require('./signup');
+
+const { client, server } = require('./error');
 // const { addList, addItem } = require('./postData');
 
 router.get('/', home);
+
+router.get('/login', login.get);
+router.get('/signup', signup.get);
+
+router.post('/login', login.post);
+router.post('/signup', signup.post);
+
 // router.post('/addList', addList);
 // router.post('/addItem', addItem);
 

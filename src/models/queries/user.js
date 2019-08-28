@@ -14,10 +14,10 @@ const selectAll = () => {
   return connection.query(sql);
 };
 
-const find = id => {
+const find = username => {
   const sql = {
-    text: 'SELECT username FROM baraka_user WHERE baraka_user.id LIKE $1;',
-    values: [id]
+    text: 'SELECT username FROM baraka_user WHERE baraka_user.username LIKE $1;',
+    values: [username]
   };
   return connection.query(sql);
 };
