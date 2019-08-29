@@ -2,6 +2,7 @@ const express = require('express');
 const { join } = require('path');
 const exphbs = require('express-handlebars');
 const cookieParser = require('cookie-parser');
+const compression = require('compression');
 
 const router = require('./controllers');
 // eslint-disable-next-line import/no-extraneous-dependencies
@@ -9,9 +10,12 @@ require('env2')('config.env');
 
 const app = express();
 
-app.use(express.json());
+// app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+
 app.use(cookieParser());
+app.use(compression());
+
 app.disable('x-powered-by');
 app.set('port', process.env.PORT || 5000);
 
