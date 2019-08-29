@@ -9,7 +9,7 @@
 
 ## **What our app provide ?**
 
-Our website enable users such as teams to add their tasks and keep touch with each others, by adding, updating, deleting and make their tasks complete.
+Our website enable users such as teams to add their tasks and keep touch with each others, by adding, ~updating, deleting~ and make their tasks complete.
 The user has the ability to sign up, login and logout.
 
 ## **Why did we built our app ?**
