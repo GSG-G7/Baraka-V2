@@ -8,7 +8,8 @@
 
 body {
   background-color: #000;
-  background-image: linear-gradient(#1e2731, rgba(0, 0, 0, 0.5)), url('../assets/banner.jpg');
+  background-image: linear-gradient(to right, #1e2731, rgba(0, 0, 0, 0.5)),
+    url('../assets/banner.jpg');
   background-size: cover;
   background-position: top center;
 }
@@ -50,11 +51,24 @@ body {
   padding: 0.9rem 2rem;
   margin: 0.4rem 0.3rem;
   border-radius: 11px;
-  color: #ffffff;
+  color: #000000;
   text-decoration: none;
   font-weight: 700;
   text-transform: capitalize;
   background: #cd5a91;
+}
+
+.home__logout {
+  cursor: pointer;
+  float: right;
+  clear: both;
+  color: #ffffff;
+  text-decoration: none;
+  text-transform: capitalize;
+  font-family: Lobster;
+  background: #cd5a91;
+  padding: 0.1rem;
+  border-radius: 11px;
 }
 
 .home__results {
@@ -122,6 +136,17 @@ body {
   color: #ae4d7b;
   text-align: right;
 }
+.item__mark {
+  background-color: green;
+  border: none;
+  color: white;
+  padding: 5px 5px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 15px;
+  float: right;
+}
 .footer {
   width: 100%;
   background: #1f1c1c81;
@@ -136,7 +161,10 @@ body {
   transition: 0.2s;
   text-decoration: #000;
 }
-
+.error {
+  color: #ffffff;
+  text-align: center;
+}
 .error__img {
   display: block;
   max-width: 40vw;
@@ -150,11 +178,72 @@ body {
   text-align: center;
   text-transform: capitalize;
 }
-
-.item__mark .done {
-  background: green;
-  font-size: 100px;
+.page-wrapper {
+  padding-top: 180px;
 }
+.wrapper {
+  max-width: 780px;
+  margin: 0 auto;
+  background: #000;
+  border-radius: 10px;
+  box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  display: table;
+}
+.card__heading {
+  background: url(../assets/bg-heading-03.jpg);
+  background-position: top left;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: table-cell;
+  width: 50%;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.card__body {
+  padding: 57px 65px;
+  padding-bottom: 65px;
+  display: table-cell;
+  color: #ffffff;
+}
+
+.card__title {
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 36px;
+}
+
+.signup__button,
+.login__button {
+  cursor: pointer;
+  color: #000000 !important;
+  text-decoration: none;
+  text-transform: capitalize;
+  text-align: center;
+  background: #cd5a91 !important;
+  padding: 0.6rem 2rem !important;
+  border-radius: 24px;
+  font-size: 18px;
+}
+
+.signupForm input,
+.loginForm input {
+  position: relative;
+  margin-bottom: 33px;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 5px 0;
+  font-size: 16px;
+  color: #ccc;
+  background: transparent;
+}
+
+.card__body > a {
+  color: #ffffff;
+}
+
 @media (max-width: 600px) {
   .home__form {
     margin: 1rem 0.4rem;
@@ -168,8 +257,5 @@ body {
     width: 80%;
     margin: 1rem auto;
     display: block;
-  }
-  .list__item {
-    width: 100%;
   }
 }

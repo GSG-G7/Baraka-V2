@@ -1,6 +1,14 @@
-<form method="Post" action="/login">
-    <label for="username">Username<input name='username' type="text" required id="username"> </label>
-    <label for="password">Password <input name='password' type="password" required id="password" </label>></label>
-    <input type="submit" value="submit">
-</form>
-<a href="/signup">Don't have an account?</a>
+<div class="page-wrapper">
+    <div class="wrapper">
+        <div class="card__heading"></div>
+        <div class="card__body">
+            <h1 class="card__title">Login</h1>
+            <form class="loginForm" method="Post" action="/login">
+                <input name='username' type="text" required id="username" placeholder="User Name" aria-label="username">
+                <input name='password' type="password" required id="password" placeholder="Password" aria-label="password">
+                <input type="submit" value="submit" class="login__button">
+            </form>
+            <a href="/signup">Don't have an account?</a>
+        </div>
+    </div>
+</div>
