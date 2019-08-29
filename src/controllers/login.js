@@ -20,7 +20,7 @@ const post = (req, res, next) => {
         res.cookie('token', token, { maxAge: 86400000 });
         res.redirect('/');
       } else {
-        throw Error('not logged');
+        throw Error('User Does not exist in our db');
       }
     })
     .catch(next);
