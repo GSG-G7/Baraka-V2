@@ -1,3 +1,3 @@
-exports.signupValidate = require('./signup');
-exports.loginValidate = require('./login');
+exports.signupValidate = require('./signup').signupValidate;
+exports.loginValidate = require('./login').loginValidate;
 exports.errmsg = require('./UserErrorFeedbackHandling');

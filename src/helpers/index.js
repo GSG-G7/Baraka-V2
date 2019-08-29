@@ -1,1 +1,1 @@
-exports.formatData = require('./formatData');
+exports.formatData = require('./formatData').formatData;
