@@ -2,10 +2,11 @@ const { hash } = require('bcrypt');
 const { signupValidate, errmsg } = require('../validation');
 const user = require('../models/queries/user');
 
-const get = (req, res, next) => {
+exports.get = (req, res) => {
   res.render('signup', { title: 'Sign Up' });
 };
-const post = (req, res, next) => {
+
+exports.post = (req, res, next) => {
   const { email, username, password, confirmPassword } = req.body;
   signupValidate({ email, username, password, confirmPassword })
     // make sure username is unique errmsg
@@ -22,4 +23,3 @@ const post = (req, res, next) => {
       else next(err);
     });
 };
-module.exports = { get, post };

@@ -25,11 +25,14 @@ exports.addItem = (req, res, next) => {
         .then(() => res.redirect('/'))
         .catch(next);
     } catch (err) {
-      console.log(err.message);
+      next(err);
     }
   }
 };
 exports.markAsDone = (req, res, next) => {
   const { id } = req.body;
-  item.markAsDone(id).then(() => res.redirect('/'));
+  item
+    .markAsDone(id)
+    .then(() => res.redirect('/'))
+    .catch(next);
 };

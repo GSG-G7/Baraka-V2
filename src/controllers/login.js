@@ -2,10 +2,10 @@ const { compare } = require('bcrypt');
 const { sign } = require('jsonwebtoken');
 const { find } = require('../models/queries/user');
 
-const get = (req, res, next) => {
+exports.get = (req, res) => {
   res.render('login', { title: 'Login' });
 };
-const post = (req, res, next) => {
+exports.post = (req, res, next) => {
   const { username, password } = req.body;
   const key = process.env.KEY;
   let id;
@@ -25,4 +25,3 @@ const post = (req, res, next) => {
     })
     .catch(next);
 };
-module.exports = { get, post };

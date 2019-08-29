@@ -1,6 +1,6 @@
 const router = require('express').Router();
 
-const home = require('./home');
+const { home } = require('./home');
 const login = require('./login');
 const logout = require('./logout');
 const signup = require('./signup');

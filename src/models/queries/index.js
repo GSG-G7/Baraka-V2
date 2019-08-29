@@ -1,9 +1,3 @@
-const item = require('./item');
-const list = require('./list');
-const user = require('./user');
-
-module.exports = {
-  item,
-  list,
-  user
-};
+exports.item = require('./item');
+exports.list = require('./list');
+exports.user = require('./user');

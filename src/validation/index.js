@@ -1,9 +1,3 @@
-const { signupValidate } = require('./signup');
-const { loginValidate } = require('./login');
-const errmsg = require('./UserErrorFeedbackHandling');
-
-module.exports = {
-  signupValidate,
-  loginValidate,
-  errmsg
-};
+exports.signupValidate = require('./signup');
+exports.loginValidate = require('./login');
+exports.errmsg = require('./UserErrorFeedbackHandling');

@@ -1,3 +1,1 @@
-const formatData = require('./formatData');
-
-module.exports = { formatData };
+exports.formatData = require('./formatData');

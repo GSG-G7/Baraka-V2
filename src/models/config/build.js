@@ -3,7 +3,7 @@ const { readFileSync } = require('fs');
 
 const connection = require('./connection');
 
-const dbBuild = () => {
+exports.dbBuild = () => {
   const sql = readFileSync(join(__dirname, 'db_build.sql')).toString();
   const insert = readFileSync(join(__dirname, 'insert_fake_data.sql')).toString();
 
@@ -12,4 +12,3 @@ const dbBuild = () => {
     return result;
   });
 };
-module.exports = { dbBuild };
