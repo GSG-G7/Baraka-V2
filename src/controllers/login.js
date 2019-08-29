@@ -3,7 +3,7 @@ const { sign } = require('jsonwebtoken');
 const { find } = require('../models/queries/user');
 
 const get = (req, res, next) => {
-  res.render('login');
+  res.render('login', { title: 'Login' });
 };
 const post = (req, res, next) => {
   const { username, password } = req.body;

@@ -3,7 +3,7 @@ const { signupValidate, errmsg } = require('../validation');
 const user = require('../models/queries/user');
 
 const get = (req, res, next) => {
-  res.render('signup');
+  res.render('signup', { title: 'Sign Up' });
 };
 const post = (req, res, next) => {
   const { email, username, password, confirmPassword } = req.body;
