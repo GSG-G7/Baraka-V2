@@ -26,8 +26,8 @@ tape('test selectAll from user table', t => {
       );
       t.equal(res[0].id, 1, 'the first id in the user is 1');
       t.equal(res[1].username, 'fadi', 'the last name in the user is Fadi');
+      t.end();
     })
-    .then(t.end)
     .catch(t.error);
 });
 

@@ -3,7 +3,7 @@ const { sign } = require('jsonwebtoken');
 const { find } = require('../models/queries/user');
 
 exports.get = (req, res) => {
-  res.render('login', { title: 'Login' });
+  res.render('login');
 };
 exports.post = (req, res, next) => {
   const { username, password } = req.body;
@@ -20,7 +20,7 @@ exports.post = (req, res, next) => {
         res.cookie('token', token, { maxAge: 86400000 });
         res.redirect('/');
       } else {
-        throw Error('not logged');
+        throw Error('User Does not exist');
       }
     })
     .catch(next);
